@@ -1,0 +1,21 @@
+.slideShow{
+    text-align:center;
+    font-weight:bold; 
+    margin-bottom: 1rem;
+}
+
+.slideShow img { /* style images that are inside of class slideShow */
+    width: 25%;
+    box-shadow: 0.25rem 0.25rem 0.25rem  #444444;
+    border-radius:0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.slideShow button {
+    background-color: #BBBBBB;
+    width: 3rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem  #888888;
+    border-radius:0.25rem;
+}

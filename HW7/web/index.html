@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- HTML comments must be like this... -->
+<html>
+
+<head>
+    <title>Title Nav Using Flexbox</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="icons/smiley.png" />
+
+    <link href="style/main.css" rel="stylesheet" type="text/css" />
+    <link href="style/NavRouter.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style/myNavRouter.css" type="text/css">
+    <link href="style/camera.css" rel="stylesheet" type="text/css" />
+    <link href="style/clickSort.css" rel="stylesheet" type="text/css" />
+    <link href="style/logon.css" rel="stylesheet" type="text/css" />
+
+    <!--These links render the font I used from Google.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <div id="titleNav">
+
+        <div id="titleAndLogo">
+
+            <img src="pics/aperture_logo.png" alt="">
+            <div id="title">
+                Aperature Marketplace
+            </div>
+        </div>
+        <div id="nav">
+
+        </div>
+    </div>
+    <div id="content">
+
+        <!-- HTML comment: 
+                The content div is empty. It will get content "injected into it"
+                by the NavRouter component.
+            -->
+
+    </div> <!-- end of content area -->
+    <div id="footer">
+        by Joshua Deland
+    </div>
+
+
+    <!-- Suggest you keep these in the same order as you see them in the NB project pane -->
+    <script src="js/reusable/MakeNavRouter.js"></script>
+    <script src="js/reusable/MakeCamera.js"></script>
+    <script src="js/reusable/ajax.js"></script>
+    <script src="js/reusable/MakeClickSortTable.js"></script>
+    <script src="js/reusable/SortableTableUtils.js"></script>
+    <script src="js/reusable/MakeFilterTable.js"></script>
+
+
+    <script src="js/content/blogContent.js"></script>
+    <script src="js/content/homeContent.js"></script>
+    <script src="js/content/cameraContent.js"></script>
+    <script src="js/content/cameraContentsort.js"></script>
+    <script src="js/content/userContent.js"></script>
+    <script src="js/content/account.js"></script>
+    
+
+    <script>
+
+        "use strict";
+
+        // Home | Account | Search | Tutorial | Blog
+
+        var myNavList = [
+
+            // property linkText is what shows up for the user as linked text in the Nav Bar.
+            // property linkURL is what shows up in the browser's address bar when they click that link. 
+            // property action is the function to be run when the NavRouter sees that link has been clicked. 
+            // -- it's the actual function, not function name, don't use quotes around homeContent). 
+            { linkText: "Home", linkURL: "#/home", action: homeContent },
+            {
+                header: "Account",
+                subMenu: [
+
+                    // These links show up in nav bar but are not functional because 
+                    // they have no linkURL and no action.
+                    { linkText: "Register" },
+                    { linkText: "Log In", linkURL: "#/logon", action: account.logon },
+                    { linkText: "Log Out", linkURL: "#/logoff", action: account.logoff },
+                    { linkText: "Profile", linkURL: "#/profile", action: account.getProfile}
+                ]
+            },
+            {
+                header: "Search",
+                subMenu: [
+                    { linkText: "My Cameras", linkURL: "#/cameras", action: cameraContent },
+                    {linkText: "Users API", linkURL: "#/usersAPI", action: "webAPIs/listUsersAPI.jsp"},
+                    {linkText: "Cameras API", linkURL: "#/camerasAPI", action: "webAPIs/listCamerasAPI.jsp"},
+                    { linkText: "Slide Show" },
+                    { linkText: "Search - Users", linkURL: "#/userSearch", action: userContent },
+                    { linkText: "Search - Cameras", linkURL: "#/cameraSearch", action: cameraContentsort }
+                ]
+            },
+
+            {
+                header: "Tutorial",
+                subMenu: [
+                    { linkText: "Proposal", linkURL: "#/proposal", action: "tutorial/proposal.pdf" },
+                    { linkText: "Proof Of Concept", linkURL: "#/tutPOC", action: "tutorial/poc.html" },
+                    { linkText: "Demo", linkURL: "#/tutDemo", action: "tutorial/download/demo.html" },
+                    { linkText: "Tutorial Home", linkURL: "#/tutHome", action: "tutorial/index.html" }
+                ]
+            },
+
+            // action attribute is a function name - no quotes around blog.
+            { linkText: "Blog", linkURL: "#/blog", action: blogContent }
+        ];
+
+        var myNav = MakeNavRouter({
+            navId: "nav", // this is where the nav bar will be injected
+            navList: myNavList, // the list of link objects (linkText, linkURL, actions)
+            contentId: "content", // the id where content is to be injected
+            startLink: "#/home"     // routing will set this as the first link. 
+        });
+
+    </script>
+</body>
+
+</html>

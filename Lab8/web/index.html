@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- HTML comments like this... -->
+<html>
+    <head>
+        <title>Title Nav Using Flexbox</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="style/myStyle.css" rel="stylesheet" type="text/css" />  
+        <link href="style/dropDown.css" rel="stylesheet" type="text/css" />  
+
+        <link rel="shortcut icon" href="icons/favicon.ico">
+
+        <style>
+        </style>
+    </head>
+    <body>
+        <div id="titleNav">
+            <div id="title">
+                Insert Activity
+            </div>
+            <div id="nav">
+                <div class="dropDown">
+                    <div class="dropHeader">Users</div>
+                    <div class="dropContent">
+                        <a target="_blank" href="insertUser.html">Insert User (HTML Page)</a> <br/>
+                        <a target="_blank" href="webAPIs/insertUserAPI.jsp">Insert User (API)</a> <br/>
+                        <a target="_blank" href="webAPIs/listUsersAPI.jsp">List Users (API)</a> 
+                    </div> 
+                </div>
+                <div class="dropDown">
+                    <div class="dropHeader">Other</div>
+                    <div class="dropContent">
+                        <a target="_blank" href="insertOther.html">Insert Other (HTML Page)</a> <br/>
+                        <a target="_blank" href="webAPIs/insertOtherAPI.jsp">Insert Other (API)</a> <br/>
+                        <a target="_blank" href="webAPIs/listOtherAPI.jsp">List Other (API)</a> 
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div id="content">
+
+        </div>
+        <div id="footer">
+            Your Footer Goes Here
+        </div>
+        <script src='js/dropDownFW.js'></script>
+        <script>
+                        dropDownFW({
+                            dropHeaderStyle: "dropHeader",
+                            dropContentStyle: "dropContent",
+                            showStyle: "show",
+                            hideStyle: "hide"
+                        });
+        </script>
+    </body>
+</html>

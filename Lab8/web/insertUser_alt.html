@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- HTML comments like this... -->
+<html>
+    <head>
+        <title>Title Nav Using Flexbox</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- This is how you link to an external style sheet. -->
+
+        <link href="style/insertArea.css" rel="stylesheet" type="text/css" /> 
+
+        <style>
+            body {
+                font-family: sans-serif;              
+            }
+
+        </style>
+
+        <link rel="shortcut icon" href="icons/favicon.ico">
+    </head>
+    <body>
+
+        <div id="content"></div>
+
+        <script src="js/ajax.js"></script>
+        <script src="js/MakeUserInputArea.js"></script>
+
+        <script>
+
+            document.getElementById("content").appendChild(MakeUserInputArea());
+
+        </script>
+
+    </body>
+</html>
