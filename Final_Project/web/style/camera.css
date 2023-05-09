@@ -1,0 +1,53 @@
+/* 
+
+CSS File Naming Convention:
+
+Every JavaScript function that "Makes" a reusable UI component shall have a 
+component specific CSS file that's named like the component. Every CSS selector 
+in the file shall begin with a CSS class that matches the CSS file name.
+
+To follow the CSS naming convention, 
+   all CSS selectors in this file (named "obj.css")must start with ".obj".
+   This "localizes your styling" so that it only applies within an element 
+   classed "obj".          
+
+*/
+
+
+
+.camera {  /* applies to any dom element that's classed "obj" */
+    background-color:  rgb(186, 236, 233);
+    margin: 1rem;
+    text-align: center;
+    border-radius:0.5rem;
+
+}
+
+.camera h3 { /* applies to any "h2" tag that's in an "obj" dom element */
+    background-color:  rgb(186, 236, 233);
+    padding: .3rem;
+    margin:0rem;
+    margin-bottom:1rem;
+    width: 100%;
+    border-radius:0.5rem;
+    border-bottom-left-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+}
+
+.camera button {
+    border-radius: .6em;
+    padding: .3em;
+    border-width: .1em;
+}
+
+.camera input {
+    border-radius: .6em;
+    padding: .5em;
+    border-width: .1em;
+    margin-bottom: 1em;
+}
+
+.camera img { /* applies to any "img" tag that's in an "obj" dom element */
+    width:75%;
+    /* box shadow: left offset, right offset, size of blur, color */
+}

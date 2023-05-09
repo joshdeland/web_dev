@@ -1,0 +1,72 @@
+<html>
+
+<body>
+
+
+</body>
+
+
+<script>
+
+
+    const filters = [{
+
+        type: 'slider',
+        title: 'Price',
+        attribute: 'price',
+        min: 1000,
+        max: 100000,
+        value: 25000,
+        direction: 'greater-than'
+    }];
+
+    const productContainer = document.createElement("div");
+    document.body.appendChild(productContainer);
+    productContainer.innerHTML = "";
+
+    // Create slider filter
+    filters.forEach((filter) => {
+    const filterSliderContainer = document.createElement("div");
+    filterSliderContainer.className = "slider-container";
+
+    // Min value to the left of slider
+    const filterMinValue = document.createElement("span");
+    filterMinValue.className = "slider-min-value";
+    filterMinValue.textContent = `${filter.min} `;
+    filterSliderContainer.appendChild(filterMinValue);
+
+    const filterSlider = document.createElement("input");
+    filterSlider.type = "range";
+    filterSlider.min = filter.min;
+    filterSlider.max = filter.max;
+    filterSlider.value = filter.value;
+    // Max value to the right of slider
+    const filterMaxValue = document.createElement("span");
+    filterMaxValue.className = "slider-max-value";
+    filterMaxValue.textContent = `${filter.max} `;
+    filterSliderContainer.appendChild(filterMaxValue);
+
+    const filterCurrentValue = document.createElement("span");
+    filterCurrentValue.className = "slider-current-value";
+
+    filterCurrentValue.textContent = ` Showing ${filter.attribute}s ${filter.direction === "less-than"
+            ? "<"
+            : filter.direction === "greater-than"
+                ? ">"
+                : ""
+        } ${filter.value} `;
+    filterSliderContainer.appendChild(filterCurrentValue);
+    filterCurrentValue.textContent = `Showing ${filter.attribute}s: ${filter.direction === "less-than"
+            ? "<"
+            : filter.direction === "greater-than"
+                ? ">"
+                : ""
+        } ${filterSlider.value}`; // Update current value display with direction
+
+    filterSliderContainer.appendChild(filterSlider);
+    productContainer.appendChild(filterSliderContainer);
+    });
+
+</script>
+
+</html>

@@ -1,0 +1,61 @@
+<html>
+
+<body>
+
+
+</body>
+
+
+<script>
+
+
+    const products1 = [
+        {
+            thumbnail: 'https://www.netcarshow.com/Toyota-Corolla-2007-800-02.jpg',
+            name: 'Toyota Corolla',
+            price: 10990,
+            condition: 'used',
+            type: 'sedan'
+        },
+        {
+            thumbnail: 'https://www.netcarshow.com/Ford-Focus-2022-800-01.jpg',
+            name: 'Ford Focus',
+            price: 19999,
+            condition: 'new',
+            type: 'sedan'
+        },
+        {
+            thumbnail: 'https://www.netcarshow.com/Chevrolet-Cruze-2019-800-01.jpg',
+            name: 'Chevy Cruze',
+            price: 25990,
+            condition: 'new',
+            type: 'sedan'
+        }]
+
+    const productContainer = document.createElement("div");
+    document.body.appendChild(productContainer);
+    productContainer.innerHTML = "";
+
+    // Create product grid
+    const productGrid = document.createElement("div");
+    productGrid.className = "product-grid";
+    productContainer.appendChild(productGrid);
+
+    function renderProducts(filteredProducts) {
+        productGrid.innerHTML = "";
+        filteredProducts.forEach((product) => {
+            const productItem = document.createElement("div");
+            productItem.className = "product-item";
+            productItem.innerHTML = `
+            <img src="${product.thumbnail}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>Price: $${product.price}</p>
+            `;
+            productGrid.appendChild(productItem);
+        });
+    }
+
+    renderProducts(products1);
+</script>
+
+</html>

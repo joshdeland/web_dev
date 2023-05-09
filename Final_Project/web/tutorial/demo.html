@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Product Filter Demo</title>
+  <link rel="stylesheet" href="productFilter.css">
+  <style>
+
+    body {
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      align-items: center;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <h1>Product Filter Demo</h1>
+
+  <script src="createProductFilter.js"></script>
+  <script>
+    // Define product list 1
+    const products1 = [
+      {
+        thumbnail: 'https://www.netcarshow.com/Toyota-Corolla-2007-800-02.jpg',
+        name: 'Toyota Corolla',
+        price: 10990,
+        condition: 'used',
+        type: 'sedan'
+      },
+      {
+        thumbnail: 'https://www.netcarshow.com/Ford-Focus-2022-800-01.jpg',
+        name: 'Ford Focus',
+        price: 19999,
+        condition: 'new',
+        type: 'sedan'
+      },
+      {
+        thumbnail: 'https://www.netcarshow.com/Chevrolet-Cruze-2019-800-01.jpg',
+        name: 'Chevy Cruze',
+        price: 25990,
+        condition: 'new',
+        type: 'sedan'
+      },
+      {
+        thumbnail: 'https://www.netcarshow.com/Hyundai-Sonata-2024-800-04.jpg',
+        name: 'Hyundai Sonata',
+        price: 78990,
+        condition: 'new',
+        type: 'sedan'
+      },
+      {
+        thumbnail: 'https://www.netcarshow.com/Honda-Accord_Sedan-2003-800-02.jpg',
+        name: 'Honda Accord',
+        price: 32990,
+        condition: 'used',
+        type: 'sedan'
+      },
+      {
+        thumbnail: 'https://www.netcarshow.com/Volvo-XC90-2020-800-0c.jpg',
+        name: 'Volvo XC90',
+        price: 89990,
+        condition: 'new',
+        type: 'suv'
+      }
+    ];
+      // Define filter list 2
+      const filters1 = [
+      {
+        type: 'buttons',
+        title: 'Condition',
+        attribute: 'condition',
+        values: ['used', 'new']
+      },
+      {
+        type: 'buttons',
+        title: 'Body Type',
+        attribute: 'type',
+        values: ['sedan', 'suv']
+      },
+      {
+
+        type: 'slider',
+        title: 'Price',
+        attribute: 'price',
+        min: 1000,
+        max: 100000,
+        value: 25000,
+        direction: 'greater-than'
+      }
+    ];
+
+    // Define product list 2
+    const products2 = [
+      {
+        thumbnail: 'https://media.accobrands.com/media/560-560/387070.jpg?width=680px&height=449px',
+        name: 'One Subject College Ruled Notebook',
+        price: 3.99,
+        subject_count: 1,
+        ruling: "wide",
+        color: 'red'
+      },
+      {
+        thumbnail: 'https://media.accobrands.com/media/560-560/387067.jpg?width=680px&height=449px',
+        name: '3 Subject Wide Ruled Notebook',
+        price: 5.99,
+        subject_count: 3,
+        ruling: "wide",
+        color: 'green'
+      },
+      {
+        thumbnail: 'https://media.accobrands.com/media/560-560/472383.jpg?width=680px&height=449px',
+        name: '5 Subject College Ruled Notebook',
+        price: 9.99,
+        subject_count: 5,
+        ruling: "college",
+        color: 'green'
+      },
+      {
+        thumbnail: 'https://media.accobrands.com/media/560-560/387063.jpg?width=680px&height=449px',
+        name: '3 Subject College Ruled Notebook',
+        price: 5.99,
+        subject_count: 3,
+        ruling: "college",
+        color: 'black'
+      },
+      {
+        thumbnail: 'https://media.accobrands.com/media/560-560/387065.jpg?width=680px&height=449px',
+        name: 'One Subject Wide Ruled Notebook',
+        price: 3.99,
+        subject_count: 1,
+        ruling: "wide",
+        color: 'blue'
+      }
+    ];
+
+    // Define filter list 2
+    const filters2 = [
+      {
+        type: 'buttons',
+        title: 'Subject Count',
+        attribute: 'subject_count',
+        values: [1, 3, 5]
+      },
+      {
+        type: 'buttons',
+        title: 'Ruling',
+        attribute: 'ruling',
+        values: ['college', 'wide']
+      },
+      {
+        type: 'buttons',
+        title: 'Color',
+        attribute: 'color',
+        values: ['green', 'red', 'black', 'blue']
+      },
+      {
+        type: 'slider',
+        title: 'Price',
+        attribute: 'price',
+        min: 3,
+        max: 10,
+        value: 5,
+        direction: 'less-than'
+      }
+    ];
+
+    // Call createProductFilter with product list 1 and filter list 1
+    createProductFilter(products1, filters1, 'product-list-1');
+
+    document.body.appendChild(document.createElement("br"));
+
+    // Call createProductFilter with product list 2 and filter list 2
+    createProductFilter(products2, filters2, 'product-list-2');
+  </script>
+</body>
+
+</html>

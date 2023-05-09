@@ -1,0 +1,18 @@
+.logon {
+    padding: 2em;
+}
+.logon p {
+    width: 50%;
+}
+
+.logon span {
+    margin: .5em;
+}
+
+.logon input {
+    padding: .5em;
+}
+
+.logon button {
+    padding: .5em;
+}

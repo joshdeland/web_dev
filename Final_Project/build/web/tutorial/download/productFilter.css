@@ -1,0 +1,134 @@
+/* CSS for the Filter Menu */
+
+.filter-menu {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-title {
+  font-weight: bold;
+}
+
+.filter-values {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-values-dropdown {
+  display: none;
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  min-width: 160px;
+  border-radius: 4px;
+}
+
+.filter-values-dropdown button {
+  margin-right: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #e0e0e0;
+  color: #000;
+  border: none;
+  cursor: pointer;
+}
+
+.caret-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: .5em;
+  color: #333;
+  cursor: pointer;
+  font-size: 1em;
+  padding: .5em 1em;
+  align-items: center;
+  margin-left: .5em;
+}
+
+.caret-button:hover {
+  background-color: #f0f0f0;
+}
+
+.caret-icon {
+  border-style: solid;
+  border-width: 0.2em 0.2em 0 0;
+  content: '';
+  display: inline-block;
+  height: 0.45em;
+  left: 0.25em;
+  position: relative;
+  top: 0.15em;
+  transform: rotate(135deg);
+  vertical-align: middle;
+  width: 0.45em;
+}
+
+/* CSS for the Slider Filter */
+.slider-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.slider-container input[type="range"] {
+  flex-grow: 1;
+}
+
+.slider-min-value,
+.slider-max-value,
+.slider-current-value {
+  white-space: nowrap;
+}
+
+/* CSS for the Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.product-item {
+  padding: 1rem;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-item h3 {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.product-item p {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+.active {
+  background-color: green;
+  color: white;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}

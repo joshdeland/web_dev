@@ -1,0 +1,66 @@
+[
+
+        {
+        "webUserId": "1",
+        "userEmail": "abha@temple.edu",
+        "image": "http://cis-linux2.temple.edu/~sallyk/pics_users/abha.jpg",
+        "birthday": "11/22/2001",
+        "membershipFee": "",
+        "userRoleId": "3",
+        "userRoleType": "Member",
+        "errorMsg": ""
+    },
+    {
+        "webUserId": "2",
+        "userEmail": "dominic@temple.edu",
+        "image": "http://cis-linux2.temple.edu/~sallyk/pics_users/dominic.jpg",
+        "birthday": "",
+        "membershipFee": "$1,000.99",
+        "userRoleId": "3",
+        "userRoleType": "Member",
+        "errorMsg": ""
+    },
+        {
+        "webUserId": "343",
+        "userEmail": "frank@temple.edu",
+        "image": "http://cis-linux2.temple.edu/~sallyk/pics_users/frank.jpg",
+        "birthday": "04/05/2015",
+        "membershipFee": "$5.00",
+        "userRoleId": "3",
+        "userRoleType": "Member",
+        "errorMsg": ""
+    },
+
+    {
+        "webUserId": "346",
+        "userEmail": "jamie@gmail.com",
+        "image": "http://cis-linux2.temple.edu/~sallyk/pics_users/jamie.jpg",
+        "birthday": "02/02/1997",
+        "membershipFee": "$9.99",
+        "userRoleId": "1",
+        "userRoleType": "Admin",
+        "errorMsg": ""
+    },
+
+
+    {
+        "webUserId": "349",
+        "userEmail": "karl@gmail.com",
+        "image": "http://cis-linux2.temple.edu/~sallyk/pics_users/karl.jpg",
+        "birthday": "02/02/1997",
+        "membershipFee": "$9.99",
+        "userRoleId": "1",
+        "userRoleType": "Admin",
+        "errorMsg": ""
+    },
+        {
+        "webUserId": "352",
+        "userEmail": "sallyk@gmail.com",
+        "image": "http://cis-linux2.temple.edu/~sallyk/pics_users/sallyk.jpg",
+        "birthday": "02/02/1997",
+        "membershipFee": "$9.99",
+        "userRoleId": "1",
+        "userRoleType": "Admin",
+        "errorMsg": ""
+    }
+]

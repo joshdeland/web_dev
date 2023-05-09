@@ -1,0 +1,72 @@
+<html>
+
+<body>
+
+
+</body>
+
+
+<script>
+
+
+    const filters = [
+        {
+            type: 'buttons',
+            title: 'Condition',
+            attribute: 'condition',
+            values: ['used', 'new']
+        }]
+
+    const productContainer = document.createElement("div");
+    document.body.appendChild(productContainer);
+    productContainer.innerHTML = "";
+
+    // Create slider filter
+    filters.forEach((filter) => {
+
+        const filterItem = document.createElement("div");
+        productContainer.appendChild(filterItem);
+
+        const filterTitle = document.createElement("div");
+        filterTitle.className = "filter-title";
+        filterTitle.textContent = "Filter by " + filter.title;
+        filterItem.appendChild(filterTitle);
+
+        const filterValues = document.createElement("div");
+        filterValues.className = "filter-values";
+        filterItem.appendChild(filterValues);
+        // Add caret button to filter title
+        const caretButton = document.createElement("button");
+        caretButton.className = "caret-button";
+        filterTitle.appendChild(caretButton);
+
+        // Create button filters
+        filterValues.forEach((value) => {
+            const filterButton = document.createElement("button");
+            filterButton.className = "button";
+            filterButton.textContent = value;
+            filterValues.appendChild(filterButton);
+
+        });
+
+        // Style filter values as a dropdown menu
+        filterValues.className = "filter-values-dropdown";
+        filterValues.style.display = "none";
+
+        // Show/hide dropdown menu when caret button is clicked
+        caretButton.addEventListener("click", () => {
+            filterValues.style.display =
+                filterValues.style.display === "none" ? "block" : "none";
+        });
+
+        // Add caret icon to caret button
+        const caretIcon = document.createElement("span");
+        caretIcon.className = "caret-icon";
+        caretButton.appendChild(caretIcon);
+
+    });
+
+
+</script>
+
+</html>

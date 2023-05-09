@@ -1,0 +1,313 @@
+<!-- 
+    The plan
+     Product cards in a grid
+     filters on the side -> visible in desktop mode
+     Each product card has the primary image shown + price and name
+     Filters include: price range slider / custom input
+                      Checkbox dropdown menus
+                        Array of string values for each attribute
+                            One or more can be selected to filter
+-->
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      font-family: "Lato", sans-serif;
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
+
+    .price {
+      color: grey;
+      font-size: 22px;
+    }
+
+    .card button {
+      border: none;
+      outline: 0;
+      padding: 12px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    .card button:hover {
+      opacity: 0.7;
+    }
+
+    .slidecontainer {
+      width: 25%;
+    }
+
+    .sidepanel {
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      height: 250px;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      color: #818181;
+    }
+
+    .sidepanel a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 20px;
+
+      display: block;
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .sidepanel a:hover,
+    .dropdown-btn:hover {
+      color: #f1f1f1;
+    }
+
+    .sidepanel .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+    }
+
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #111;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+    }
+
+    .openbtn:hover {
+      background-color: #444;
+    }
+
+    /* Style the sidenav links and the dropdown button */
+    .dropdown-btn {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #818181;
+      display: block;
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .dropdown-btn:hover {
+      color: #f1f1f1;
+    }
+
+    /* Add an active class to the active dropdown button */
+    .active {
+      background-color: green;
+      color: white;
+    }
+
+    /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+    .dropdown-container {
+      display: none;
+      background-color: #262626;
+      padding-left: 8px;
+    }
+
+    /* Optional: Style the caret down icon */
+    .fa-caret-down {
+      float: right;
+      padding-right: 8px;
+    }
+
+    /* Style the buttons */
+    .btn {
+      border: none;
+      outline: none;
+      padding: 12px 16px;
+      background-color: #f1f1f1;
+      cursor: pointer;
+    }
+
+    /* Add a light grey background on mouse-over */
+    .btn:hover {
+      background-color: #ddd;
+    }
+
+    /* Add a dark background to the active button */
+    .btn.active {
+      background-color: #666;
+      color: white;
+    }
+
+    /* Some media queries for responsiveness */
+    @media screen and (max-height: 450px) {
+      .sidepanel {
+        padding-top: 15px;
+      }
+
+      .sidepanel a {
+        font-size: 18px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <h2 style="text-align: center">Product List</h2>
+  <button class="openbtn" onclick="openNav()"><-- Open Filter Menu</button>
+
+
+  <div id="mySidepanel" class="sidepanel">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">xxx</a>
+    <div class="priceContainer">
+      <h3>Adjust Max Price</h3>
+      <div class="slidecontainer">
+        <input type="range" min="10001" max="99999" value="99999" class="slider" id="myRange">
+      </div>
+      <p>Max price: <span id="demo"></span></p>
+    </div>
+    <button class="dropdown-btn">Filter Condition
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <div id="myBtnContainer">
+        <button class="btn" onclick="filterSelection('fair')"> Fair</button>
+        <button class="btn" onclick="filterSelection('great')"> Great</button>
+        <button class="btn" onclick="filterSelection('excellent')"> Excellent</button>
+        <button class="btn" onclick="filterSelection('new')"> New</button>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</body>
+
+<script>
+
+
+
+  var carList = [
+    { make: "Buick", image: "http://cis-linux2.temple.edu/~sallyk/pics_car/black_audi.png", condition: 'excellent', price: '78000', available: "3/4/2020" },
+    { make: "White Audi", image: "http://cis-linux2.temple.edu/~sallyk/pics_car/white_audi.png", condition: 'fair', price: '21000', available: "1/2/2022" },
+    { make: "Black Audi", image: "http://cis-linux2.temple.edu/~sallyk/pics_car/black_audi.png", condition: 'new', price: '47000', available: "3/4/2020" },
+    { make: "Blue Audi", image: "http://cis-linux2.temple.edu/~sallyk/pics_car/blue_audi.png", condition: 'great', price: '12000', available: "12/27/2021" }
+
+  ];
+
+  var cardList = [];
+
+
+  function makeCard(product) {
+    var card = document.createElement("div");
+    document.body.appendChild(card);
+    card.classList.add("card");
+
+    card.innerHTML = `
+    <img src="${product.image}" alt="${product.make}" style="width: 100%" />
+  <h1>${product.make}</h1>
+  <p class="price">${product.price}</p>
+  <p class="condition">${product.condition}</p>
+  <p><button>Add to Cart</button></p>
+    `;
+    return card;
+  }
+
+  for (i = 0; i < carList.length; i++) {
+    cardList += makeCard(carList[i]);
+  }
+
+
+  var slider = document.getElementById("myRange");
+  var output = document.getElementById("demo");
+  output.innerHTML = slider.value; // Display the default slider value
+
+  // Update the current slider value (each time you drag the slider handle)
+  slider.oninput = function () {
+    output.innerHTML = this.value;
+    filterSlider(this.value);
+  }
+
+  function openNav() {
+    document.getElementById("mySidepanel").style.width = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidepanel").style.width = "0";
+  }
+
+  var dropdown = document.getElementsByClassName("dropdown-btn");
+  var i;
+
+  for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+    });
+  }
+
+  function filterSelection(cond) {
+    var buttonContainer = document.getElementById("myBtnContainer");
+    var filterList = buttonContainer.getElementsByTagName("button");
+    var cardList = document.body.getElementsByClassName("card");
+
+    for (i = 0; i < cardList.length; i++) {
+      cardList[i].style.display = "block";
+      if (cardList[i].getElementsByClassName("condition")[0].innerHTML != cond) {
+        cardList[i].style.display = "none";
+      }
+    }
+
+  }
+
+  function filterSlider(value) {
+    var buttonContainer = document.getElementById("myBtnContainer");
+    var filterList = buttonContainer.getElementsByTagName("button");
+    var cardList = document.body.getElementsByClassName("card");
+
+    for (i = 0; i < cardList.length; i++) {
+      cardList[i].style.display = "block";
+      if (cardList[i].getElementsByClassName("price")[0].innerHTML >= value) {
+        cardList[i].style.display = "none";
+      }
+    }
+
+  }
+
+</script>
+
+</html>

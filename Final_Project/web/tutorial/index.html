@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 5em;
+    padding: 5em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-top: 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  code {
+    font-family: monospace;
+    background-color: #f7f7f7;
+    border-radius: 0.2rem;
+  }
+</style>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+
+  <h1>Tutorial Homepage</h1>
+  <h4>Joshua Deland</h4>
+
+  <h3>Component Explanation</h3>
+  <p>My component is a combination of a filter menu and a product card generator. The function takes two input
+    parameters: a list of products and a list of filters. For each product in the product list, a product card is
+    generated. All product in the product list have three required fields: a thumbnail image, a product name, and a
+    price. As long as those requirements are met, any other attributes are optional and the product card can be
+    displayed. The filters within the filter menu are generated from a filter list. For all filters, the user is
+    required to have these fields: type, title, and attribute. There are two types of filters: button filters and
+    slider filters. Button filters also require a 'values' field, which is a list of all values pertaining to the
+    attribute that the user wants to be filtered. For slider filters, they require a min, max, value, and direction
+    field. Min and max define the range of values that can be slid between, while value is default value when the
+    page is loaded, and changes when the user interacts with the slider. The direction denotes if products being
+    displayed will have an attribute value greater than or less than the current slider value.
+    <br><br>
+    Click <a target="_blank" href='download/demo.html'>here</a> to go to the demo page.<br>
+    Click <a href="download.zip">here</a> to download the component zip file.
+  </p>
+
+  <h3>Code Snippets</h3>
+
+  <a href="product.html">Product Cards</a>
+  <p>This snippet shows the function that generates the product cards when given a list of products.</p>
+
+
+  <a href="slider.html">Slider</a>
+  <p>This snippet shows how the fields of a slider within the filter list can be used to create a slider HTML component.
+  </p>
+
+  <a href="button.html">Button Menu</a>
+  <p>This snippet demonstrates how a button filter object within a filter list can be turned into a button dropdown
+    menu.</p>
+
+  <h3>References</h3>
+  <a href="https://www.ebay.com/b/DSLR-Cameras/31388/bn_732">eBay</a>
+
+
+  <script src="" async defer></script>
+</body>
+
+</html>
