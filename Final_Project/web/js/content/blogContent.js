@@ -20,6 +20,21 @@ function blogContent() {
       <li>web_user_id: foreign key (integer)</li>
     </ul>
 
+    
+    <ul>
+      <li>Auto-increment User Camera ID (integer)</li>
+      <li>Brand (string)</li>
+      <li>Model (string)</li>
+      <li>Camera Price (double)</li>
+      <li>Type (string) [nullable]</li>
+      <li>Condition (string)</li>
+      <li>Megapixels (double) [nullable]</li>
+      <li>Year Made (integer) [nullable]</li>
+      <li>Primary Picture (string)</li>
+      <li>User description (string) [nullable]</li>
+      <li>web_user_id: foreign key (integer)</li>
+    </ul>
+
     <p id="experience"><strong>My Web Development Experience:</strong> I have minimal web development experience, but I think that the little that I do have will still help me in this class. My freshman year, I attended the Universty of Vermont, and while I was there I took an introductory web development class. In this class I created a couple of websites using HTML, CSS, and primarily PHP. This class helped me understand the basics of site design and structure, as we also created wireframes for our site. Besides that class, I also worked on a Python web application last semester in Temple's Software Design course. I used the Django web framework to create a server-side web app that utilized the Spotify Web API to generated customized playlists. From working on this project, I learned about web frameworks and about how to make API calls to dynamically update your website.</p>
   
 
