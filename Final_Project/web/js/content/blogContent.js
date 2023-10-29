@@ -18,6 +18,7 @@ function blogContent() {
       <li>Primary Picture (string)</li>
       <li>User description (string) [nullable]</li>
       <li>web_user_id: foreign key (integer)</li>
+      <add
     </ul>
 
     
